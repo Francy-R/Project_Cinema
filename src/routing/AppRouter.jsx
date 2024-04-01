@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { getMovie, getMovies } from "../services/getMovies";
+import Layout from "../layout/Layout";
+import Home from "../pages/Home";
+import Details from "../pages/Details";
 
 const AppRouter = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    getMovies()
-      .then((response) => {
-        if (movies.length === 0) {
-          setMovies(response.results);
-          console.log(response)
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  
+    if (movies.length === 0) {
+      getMovies()
+        .then((response) => {
+          setMovies(response);
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
     // getParamsFromStorage();
   }, [movies]);
 
@@ -24,11 +28,16 @@ const AppRouter = () => {
   // },[])
   // return
   return (
-    <div>AppRouter</div>
-  )
-  
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home movies={movies} />} />
+          <Route path="movie/:idMovie" element={<Details />} />
+          {/* Aquí deben relacionar las demás rutas con sus páginas */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-
-
-export default AppRouter
+export default AppRouter;
