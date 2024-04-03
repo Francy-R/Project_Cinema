@@ -30,7 +30,7 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout movies={movies} />}>
           <Route index element={<Home movies={movies} />} />
           <Route path="movie/:idMovie" element={<Details />} />
           {/* Aquí deben relacionar las demás rutas con sus páginas */}
