@@ -29,8 +29,8 @@ const Layout = ({ movies = [] }) => {
             },
           }}
         >
-          {movies.map((elem) => (
-            <SwiperSlide className="cursor-pointer">
+          {movies.map((elem, index) => (
+            <SwiperSlide key={index} className="cursor-pointer">
               <CardCarousel movieInfo={elem} />
             </SwiperSlide>
           ))}

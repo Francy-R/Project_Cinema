@@ -3,9 +3,9 @@ import React from "react";
 function CardCarousel({ movieInfo = {} }) {
   return (
     // Contenedor Principal
-    <div className="relative h-46">
+    <div className="relative h-46 gap-y 5">
       <img
-        className="w-full h-auto"
+        className="w-full h-full object-cover"
         src={`https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`}
         alt=""
       />
