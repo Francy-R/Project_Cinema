@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMovie, getMovies } from "../services/getMovies";
+import Header from "../components/Header";
+
 
 const AppRouter = () => {
   const [movies, setMovies] = useState([]);
@@ -24,7 +26,7 @@ const AppRouter = () => {
   // },[])
   // return
   return (
-    <div>AppRouter</div>
+    <Header/>
   )
   
 }
