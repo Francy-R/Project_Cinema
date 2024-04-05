@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const SuccesSummary = () => {
 
-//Dentro de un useEffect deben implementar una lógica para que el componente SuccesSummary no sea visible en la página de detalles
+//el componente SuccesSummary no sea visible en la página de detalles
 
   return (
     <>

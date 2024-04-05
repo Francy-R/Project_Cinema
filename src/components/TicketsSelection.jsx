@@ -35,7 +35,7 @@ import React, { useState } from "react";
 
    return (
     
-     <section className="flex gap-14 ml-12">
+     <section className="flex gap-14 mt-16 ml-12">
        <div>
          <h2 className="text-xl font-bold">Selecciona tus boletos</h2>
          <span>Puedes comprar 10 boletos máximo por transacción.</span>
@@ -60,22 +60,23 @@ import React, { useState } from "react";
  }
 
  export default TicketsSelection;
-//import React from 'react';
 
-// const MovieCard = ({ movie }) => {
-//   // movie' es el obj. con la info. de la película
+// import React from 'react';
 
-//   // Función quecalcula el precio con iva incluido
-//   const calcularPrecioConIVA = () => {
-//     const precioSinIVA = movie.precio;
-//     const iva = 0.16; // IVA del 16%
-//     const precioConIVA = precioSinIVA * (1 + iva);
-//     return precioConIVA.toFixed(2); // redondeo decimales
-//   };
+//  const MovieCard = ({ movie }) => {
+//    // movie' es el obj. con la info. de la película
+
+//    // Función quecalcula el precio con iva incluido
+//    const calcularPrecioConIVA = () => {
+//      const precioSinIVA = movie.precio;
+//      const iva = 0.16; // IVA del 16%
+//      const precioConIVA = precioSinIVA * (1 + iva);
+//      return precioConIVA.toFixed(2); // redondeo decimales
+//    };
 
 //   return (
-//      <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-//        <h2 className="text-xl font-semibold">{movie.titulo}</h2>
+//       <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+//         <h2 className="text-xl font-semibold">{movie.titulo}</h2>
 //        <p className="text-gray-700 mt-2">{movie.descripcion}</p>
 //        <div className="mt-4">
 //          <p className="text-gray-800">Precio: ${movie.precio}</p>

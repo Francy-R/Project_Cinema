@@ -4,8 +4,8 @@ import { getMovie, getMovies } from "../services/getMovies";
 import Layout from "../layout/Layout";
 import Home from "../pages/Home";
 import Details from "../pages/Details";
-import SuccesSummary from "../pages/SuccesSummary";
 import Tickets from "../pages/Tickets";
+//import TicketsSelection from "../components/TicketsSelection";
 
 
 const AppRouter = () => {
@@ -35,12 +35,10 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<Layout movies={movies} />}>
           <Route index element={<Home movies={movies} />} />
-          <Route path="movie/:idMovie" element={<SuccesSummary />}>
-            <Route index element={<Details />} />
-            <Route path="ticket" element={ <Tickets/>} />
-          </Route>
-          {/* Aquí deben relacionar las demás rutas con sus páginas */}
+          <Route index element={<Details />} />
+          <Route path="ticket" element={ <Tickets/>} />
         </Route>
+          {/* Aquí debemos relacionar las demás rutas con sus páginas */}
       </Routes>
     </BrowserRouter>
   );
