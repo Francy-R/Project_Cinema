@@ -2,13 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import AppRouter from "./routing/AppRouter";
-import PaymentSummary from "./components/PaymentSummary";
-//import MovieCard from './components/PaymentSummary'
+// import Details from "./pages/Details";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <PaymentSummary />
+    <AppRouter />
   </React.StrictMode>
 );
-
-
