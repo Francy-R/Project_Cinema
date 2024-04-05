@@ -2,6 +2,8 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import logo from '../assets/img_logo.png'
+import profile from '../assets/img_profile.png'
 
 const navigation = [
   { name: 'Acción', href: '#', current: true },
@@ -36,8 +38,8 @@ const Header = () => {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    className="h-8 w-auto mr-1"
+                    src={logo}
                     alt="Your Company"
                   />
                   <p className='text-gray-400'>CINE COLOMBIA</p>
@@ -62,9 +64,9 @@ const Header = () => {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <Menu as="div" className="relative inline-block text-left mx-4 ">
-                <p className='text-gray-400 font-semibold'>Cines cercanos</p>
+                  <p className='text-gray-400 font-semibold'>Cines cercanos</p>
                   <div>
-                    <Menu.Button className="inline-flex w-48  gap-x-6 rounded-md bg-black px-3 py-2 text-sm  text-gray-400  ring-1 ring-inset ring-gray-300 hover:bg-neutral-900">
+                    <Menu.Button className="inline-flex w-48  gap-x-6 rounded-md bg-black px-3 py-1.5 text-sm  text-gray-400  ring-1 ring-inset ring-gray-300 hover:bg-neutral-900">
                       Macro plaza del mar
                       <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
                     </Menu.Button>
@@ -94,55 +96,14 @@ const Header = () => {
                             </a>
                           )}
                         </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(
-                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                'block px-4 py-2 text-sm'
-                              )}
-                            >
-                              Support
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(
-                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                'block px-4 py-2 text-sm'
-                              )}
-                            >
-                              License
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <form method="POST" action="#">
-                          <Menu.Item>
-                            {({ active }) => (
-                              <button
-                                type="submit"
-                                className={classNames(
-                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                  'block w-full px-4 py-2 text-left text-sm'
-                                )}
-                              >
-                                Sign out
-                              </button>
-                            )}
-                          </Menu.Item>
-                        </form>
                       </div>
                     </Menu.Items>
                   </Transition>
                 </Menu>
-                <Menu as="div" className="relative inline-block text-left mr-4">
-                <p className='text-gray-400 font-semibold'>Fecha</p>
+                <Menu as="div" className="relative inline-block text-left mr-6">
+                  <p className='text-gray-400 font-semibold'>Fecha</p>
                   <div>
-                    <Menu.Button className="inline-flex w-48  gap-x-20 rounded-md bg-black px-3 py-2 text-sm text-gray-400  ring-1 ring-inset ring-gray-300 hover:bg-neutral-900">
+                    <Menu.Button className="inline-flex w-48  gap-x-20 rounded-md bg-black px-3 py-1.5 text-sm text-gray-400  ring-1 ring-inset ring-gray-300 hover:bg-neutral-900">
                       07 de  julio
                       <ChevronDownIcon className=" -mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
                     </Menu.Button>
@@ -172,47 +133,6 @@ const Header = () => {
                             </a>
                           )}
                         </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(
-                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                'block px-4 py-2 text-sm'
-                              )}
-                            >
-                              Support
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(
-                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                'block px-4 py-2 text-sm'
-                              )}
-                            >
-                              License
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <form method="POST" action="#">
-                          <Menu.Item>
-                            {({ active }) => (
-                              <button
-                                type="submit"
-                                className={classNames(
-                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                  'block w-full px-4 py-2 text-left text-sm'
-                                )}
-                              >
-                                Sign out
-                              </button>
-                            )}
-                          </Menu.Item>
-                        </form>
                       </div>
                     </Menu.Items>
                   </Transition>
@@ -220,12 +140,12 @@ const Header = () => {
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3 mt-3">
                   <div>
-                    <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Menu.Button className="relative mt-2 flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.es%2Ficono-gratis%2Fperfil_6063734&psig=AOvVaw1OUL8N-pUAw0AY8cE814E8&ust=1712380971228000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIi12buqqoUDFQAAAAAdAAAAABAE"
+                        src={profile}
                         alt=""
                       />
                     </Menu.Button>
@@ -240,36 +160,21 @@ const Header = () => {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Your Profile
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Sign out
-                          </a>
-                        )}
-                      </Menu.Item>
+                      <form method="POST" action="#">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              type="submit"
+                              className={classNames(
+                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                'block w-full px-4 py-2 text-left text-sm'
+                              )}
+                            >
+                              Sign in
+                            </button>
+                          )}
+                        </Menu.Item>
+                      </form>
                     </Menu.Items>
                   </Transition>
                 </Menu>
