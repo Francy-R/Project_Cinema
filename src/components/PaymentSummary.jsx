@@ -1,53 +1,4 @@
-//import React from 'react'///*
-// import React, { useState } from 'react';
-
-// function PaymentSummary({ dataMovie }) {
-//    console.log(dataMovie);
-
-//    const ContadorRectangular = () => {
-//    const [contador, setContador] = useState(0);
-
-//  const incrementarContador = () => {
-//    setContador(contador + 1);
-//    };
-
-//   const restarContador = () => {
-//     setContador(contador - 1);
-//   };
-
-//   return (
-//     <div className="flex items-center bg-gray-200 rounded-lg p-4 w-1/2">
-//       <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l-lg" onClick={restarContador}>
-//         -
-//      </button>
-//     <div className="flex-1 text-center">{contador}</div>
-//     <button className="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-r-lg" onClick={incrementarContador}>
-//       +
-//      </button>
-//    </div>
-//    );
-//  };
-
-//   return (
-//     <section>
-// <div>
-//       <h2>Selecciona tus boletos</h2>
-//       <span>Puedes comprar 10 boletos màximo por transacciòn.</span>
-//      <p>ADULTO &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; $71</p>
-//      <ContadorRectangular />
-//      <p>NINOS  $56</p>
-//      <ContadorRectangular />
-//      <p>3 ERA EDAD  $56</p>
-//      <ContadorRectangular />
-//    </div>
-//      </section>
-
-//   );
-//  }
-
- // export default PaymentSummary;
-
- import React, { useState } from "react";
+import React, { useState } from "react";
 
  function PaymentSummary({ dataMovie }) {
    console.log(dataMovie);
@@ -84,7 +35,7 @@
 
    return (
     
-     <section className="flex gap-14">
+     <section className="flex gap-14 ml-12">
        <div>
          <h2 className="text-xl font-bold">Selecciona tus boletos</h2>
          <span>Puedes comprar 10 boletos máximo por transacción.</span>
@@ -119,7 +70,7 @@
 //     const precioSinIVA = movie.precio;
 //     const iva = 0.16; // IVA del 16%
 //     const precioConIVA = precioSinIVA * (1 + iva);
-//     return precioConIVA.toFixed(2); // se redondean los 2 decimales
+//     return precioConIVA.toFixed(2); // redondeo decimales
 //   };
 
 //   return (
