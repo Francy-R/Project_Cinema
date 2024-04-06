@@ -4,6 +4,10 @@ import { getMovie, getMovies } from "../services/getMovies";
 import Layout from "../layout/Layout";
 import Home from "../pages/Home";
 import Details from "../pages/Details";
+import Tickets from "../pages/Tickets";
+//import TicketsSelection from "../components/TicketsSelection";
+
+
 
 const AppRouter = () => {
   const [movies, setMovies] = useState([]);
@@ -32,12 +36,14 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<Layout movies={movies} />}>
           <Route index element={<Home movies={movies} />} />
-          <Route path="movie/:idMovie" element={<Details />} />
-          {/* Aquí deben relacionar las demás rutas con sus páginas */}
+          <Route index element={<Details />} />
+          <Route path="ticket" element={ <Tickets/>} />
         </Route>
+          {/* Aquí debemos relacionar las demás rutas con sus páginas */}
       </Routes>
     </BrowserRouter>
   );
 };
 
 export default AppRouter;
+
