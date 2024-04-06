@@ -25,7 +25,7 @@ function PurchaseSummary({dataMovie}) {
                   <span className="font-size: 14 rem font-bold">$0</span>
                 
               </div>
-             
+             q
               <div className="bg-gray-100 p-4 rounded-lg shadow-md">
                 <h2 className="text-xl font-semibold">{dataMovie.titulo}</h2>
                 <p className="text-gray-700 mt-2">{dataMovie.complejo}</p>
