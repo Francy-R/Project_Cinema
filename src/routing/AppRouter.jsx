@@ -8,6 +8,7 @@ import Tickets from "../pages/Tickets";
 //import TicketsSelection from "../components/TicketsSelection";
 
 
+
 const AppRouter = () => {
   const [movies, setMovies] = useState([]);
 
