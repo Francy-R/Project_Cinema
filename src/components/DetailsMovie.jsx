@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 function DetailsMovie({ dataMovie = {} }) {
   /*   useEffect(() => {
     console.log(dataMovie);
@@ -56,5 +55,16 @@ function DetailsMovie({ dataMovie = {} }) {
     </div>
   );
 }
-
 export default DetailsMovie;
+// function Video({ video }) {
+//   return (
+//     <div>
+//       <h1>Trailer</h1>
+//       {video && (
+//         <iframe src={`https://www.youtube.com/embed/${video}`}></iframe>
+//       )}
+//     </div>
+//   );
+// }
+
+//export default Video;
