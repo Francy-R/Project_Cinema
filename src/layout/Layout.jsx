@@ -6,10 +6,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import CardCarousel from "../components/CardCarousel";
 import { Pagination } from "swiper/modules";
+import Header from "../components/Header";
 
 const Layout = ({ movies = [] }) => {
   return (
     <div>
+      <Header/>
       <div className="h-[50vh]">
         <Swiper
           slidesPerView={1}

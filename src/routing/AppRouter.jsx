@@ -5,6 +5,7 @@ import Layout from "../layout/Layout";
 import Home from "../pages/Home";
 import Details from "../pages/Details";
 
+
 const AppRouter = () => {
   const [movies, setMovies] = useState([]);
 
