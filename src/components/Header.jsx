@@ -1,9 +1,11 @@
 import { Fragment } from 'react'
+import { useState, useEffect } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import logo from '../assets/img_logo.png'
 import profile from '../assets/img_profile.png'
+import { getCinemas } from '../services/getCinema'
 
 const navigation = [
   { name: 'Acción', href: '#', current: true },
@@ -17,6 +19,21 @@ function classNames(...classes) {
 }
 
 const Header = () => {
+  const [cinemas, setCinemas] = useState([]);
+
+  useEffect(() => {
+    // Llamada a la función getCinemas cuando el componente se monta
+    async function fetchCinemas() {
+      try {
+        const cinemasData = await getCinemas();
+        setCinemas(cinemasData);
+      } catch (error) {
+        console.error('Error fetching cinemas:', error);
+      }
+    }
+    fetchCinemas();
+  }, []);
+
   return (
     <Disclosure as="nav" className="bg-black">
       {({ open }) => (
@@ -83,6 +100,21 @@ const Header = () => {
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <div className="py-1">
+                        {/* {cinemas.map(cinema => (
+                          <Menu.Item key={cinema.id}>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                {cinema.name} 
+                              </a>
+                            )}
+                          </Menu.Item>
+                        ))} */}
                         <Menu.Item>
                           {({ active }) => (
                             <a
@@ -92,7 +124,7 @@ const Header = () => {
                                 'block px-4 py-2 text-sm'
                               )}
                             >
-                              Account settings
+                              ---
                             </a>
                           )}
                         </Menu.Item>
@@ -129,7 +161,7 @@ const Header = () => {
                                 'block px-4 py-2 text-sm'
                               )}
                             >
-                              Account settings
+                              -----
                             </a>
                           )}
                         </Menu.Item>
