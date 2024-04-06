@@ -1,5 +1,6 @@
 import axios from "axios";
 import { endpoints } from "./endpoint";
+import { data } from "autoprefixer";
 
 export const getMovies = async () => {
   try {
@@ -22,6 +23,14 @@ export const getMovie = async (idMovie) => {
   }
 };
 
+export const getTraillerMovie = async (idMovie) => {
+  try {
+    const { data } = await axios.get(endpoints.getAllMovie(idMovie));
+    return data.results.find((item) => item.type.tolowerCase() == "trailer");
+  } catch (error) {
+    console.error(error);
+  }
+};
 //   export const getVideoMovie = async (idMovie) => {
 //       try {
 //           const url = `

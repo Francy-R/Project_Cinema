@@ -7,4 +7,5 @@ export const endpoints = {
   getMovie: (id) => `${URL_API}${id}?api_key=${KEY_API}&language=es-ES`,
   getCinemas:  `${URL_BASE}cinema`,
   getSchedules: `${URL_BASE}now_playing/:movieId?api_key=${KEY_API}&language=es-ES`,
+  getVideoMovie: (idMovie) => `${URL_API}${idMovie}/${KEY_API}&language=es-ES`, //api.themoviedb.org/3/movie/{movie_id}/videos
 };
